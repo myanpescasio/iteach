@@ -1,21 +1,18 @@
-@extends('iteach.indextemplate')
+@extends('iteach.auth.auth')
 
 @section('content')
-						<?php
-							Auth::logout();
-						?>
-						@if (count($errors) > 0)
-							<div class="alert alert-danger">
-								<strong>Whoops!</strong> There were some problems with your input.<br><br>
+						@if (count(Session::get('errors')) > 0)
+							<div class="col-md-9 xs-marginbot-20">
+								<strong>Whoops!</strong> There are problems in the input.<br>
 								<ul>
-									@foreach ($errors->all() as $error)
-										<li>{{ $error }}</li>
+									@foreach (Session::get('errors') as $error)
+										{{ $error }}<br>
 									@endforeach
 								</ul>
 							</div>
 						@endif
 	
-						<form id="contact-form">
+						<form id="contact-form" role="form" method="GET" action="{{ url('/attempt_login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<!-- First Name & Last Name -->	
 						<div class="row marginbot-20">

@@ -14,12 +14,14 @@ class UserTableSeeder extends Seeder {
 	{
 		DB::table('users')->delete();
 		DB::table('users')->insert(array(
-			['fname'=>'Isagani',
+			['type'=>'admin',
+			'fname'=>'Isagani',
 			'lname'=>'Marquez',
 			'username'=>'Gani',
 			'email'=>'gani@gmail.com',
 			'password'=> bcrypt('masterGani')],
-			['fname'=>'CJ',
+			['type'=>'faculty',
+			'fname'=>'CJ',
 			'lname'=>'Cruz',
 			'username'=>'CJ',
 			'email'=>'cj@gmail.com',

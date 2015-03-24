@@ -1,18 +1,22 @@
-@extends('iteach.indextemplate')
+@extends('iteach.auth.auth')
 
 @section('content')		
-						@if (count($errors) > 0)
-							<div class="alert alert-danger">
-								<strong>Whoops!</strong> There are problems in the input.<br><br>
-								<ul>
-									@foreach ($errors->all() as $error)
-										<li>{{ $error }}</li>
-									@endforeach
-								</ul>
+						@if (count($data['errors']) > 0)
+						<div class="animatedParent">
+							<div class="animated bounceInDown">
+								<div class="col-md-9 xs-marginbot-20">
+									<strong>Whoops!</strong> There are problems in the input.<br>
+									<ul>
+										@foreach ($data['errors'] as $error)
+											{{ $error }}<br>
+										@endforeach
+									</ul>
+								</div>
 							</div>
+						</div>
 						@endif
 	
-						<form id="contact-form" role="form" method="POST" action="{{ url('/auth/login') }}">
+						<form id="contact-form" role="form" method="GET" action="{{ url('/attempt_login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<!-- Username & Password -->
