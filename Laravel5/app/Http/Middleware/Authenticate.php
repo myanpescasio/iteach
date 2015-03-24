@@ -2,6 +2,7 @@
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Session;
 
 class Authenticate {
 
@@ -32,7 +33,7 @@ class Authenticate {
 	 */
 	public function handle($request, Closure $next)
 	{
-		if ($this->auth->guest())
+		if ($this->auth->guest() && !Session::get('guest'))
 		{
 			if ($request->ajax())
 			{

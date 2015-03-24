@@ -13,9 +13,25 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('login', 'ITeachController@login');
-Route::get('register', 'ITeachController@signup');
-Route::get('home', 'ITeachController@home');
+Route::get('index', 'ITEACH\AuthController@index');
+
+Route::get('login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@login']);
+Route::get('attempt_login', 'ITEACH\AuthController@attempt');
+
+Route::get('guest', 'ITEACH\AuthController@use_guest');
+
+Route::get('register', 'ITEACH\AuthController@signup');
+
+Route::get('home', ['middleware' => 'auth', 'uses' => 'ITEACH\HomeController@home']);
+
+
+//No view has been made for this yet.
+Route::get('logout', function(){
+	Session::forget('guest');
+	Auth::logout();
+	return redirect()->intended('index');
+});
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
