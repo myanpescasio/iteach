@@ -15,9 +15,11 @@ class AuthController extends Controller {
 
 		$data = [];
 		$data += ['type' => 'li'];
-		$data += ['errors' => Session::get('errors', [])]; //gets the errors from the session, returns empty array if none
+		$errors = Session::get('errors', []); //gets the errors from the session, returns empty array if none
+		$old = Session::get('old', ['username' => '']);
 		Session::forget('errors');									//forget errors for when refresh is done, errors disappear
-		return view('iteach.auth.login', compact('data'));
+		Session::forget('old');
+		return view('iteach.auth.login', compact('data', 'errors', 'old'));
 	
 	}
 
@@ -39,7 +41,9 @@ class AuthController extends Controller {
 		//provides error data and places into temporary session
 		$errors = [];
 		$errors += ['auth' => 'Username/Password match is invalid'];
+		$old = ['username' => $username];
 		Session::put('errors', $errors);	//place into section
+		Session::put('old', $old);
 
 		return redirect()->intended('login');	//This is done to hide submitted data from the url
 	
@@ -58,9 +62,12 @@ class AuthController extends Controller {
 
 		$data = [];
 		$data += ['type' => 'su'];
-		$data += ['errors' => Session::get('errors', [])];
+		$errors = Session::get('errors', []);
+		$old = Session::get('old', ['username' => '']);
 		Session::forget('errors');
-		return view('iteach.auth.sign-up', compact('data'));
+		Session::put('old', $old);
+		
+		return view('iteach.auth.sign-up', compact('data', 'errors', 'old'));
 	}
 
 	//First page to be viewed
