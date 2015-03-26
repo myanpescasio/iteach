@@ -1,13 +1,13 @@
 @extends('iteach.auth.auth')
 
 @section('content')		
-						@if (count($errors) > 0)
+						@if (count($data['errors']) > 0)
 						<div class="animatedParent">
 							<div class="animated bounceInDown">
 								<div class="col-md-9 xs-marginbot-20">
 									<strong>Whoops!</strong> There are problems in the input.<br>
 									<ul>
-										@foreach ($errors as $error)
+										@foreach ($data['errors'] as $error)
 											{{ $error }}<br>
 										@endforeach
 									</ul>
@@ -23,7 +23,7 @@
 						<div class="row">
 							<div class="col-md-9 xs-marginbot-20">
 							<div class="form-group">
-								<input type="text" class="form-control input-lg" id="username" name="username" placeholder="Username" required="required" value="{{ $old['username'] }}"/>
+								<input type="text" class="form-control input-lg" id="username" name="username" placeholder="Username" required="required" value="{{ old('username') }}"/>
 							</div>
 							</div>
 						</div>
