@@ -16,7 +16,7 @@ Route::get('/', 'WelcomeController@index');
 Route::get('index', 'ITEACH\AuthController@index');
 
 Route::get('login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@login']);
-Route::get('attempt_login', 'ITEACH\AuthController@attempt');
+Route::get('attempt_login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@attempt']);
 
 Route::get('guest', 'ITEACH\AuthController@use_guest');
 
