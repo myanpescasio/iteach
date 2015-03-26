@@ -24,6 +24,12 @@ Route::get('register', 'ITEACH\AuthController@signup');
 
 Route::get('home', ['middleware' => 'auth', 'uses' => 'ITEACH\HomeController@home']);
 
+Route::get('parser', 'Parser@parse');
+
+Route::get('viewAll', 'ViewController@viewAll');
+Route::get('viewCourse', 'ViewController@viewCourse');
+Route::get('viewInstructor', 'ViewController@viewInstructor');
+Route::get('viewRoom', 'ViewController@viewRoom');
 
 //No view has been made for this yet.
 Route::get('logout', function(){
