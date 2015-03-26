@@ -1,11 +1,11 @@
 @extends('iteach.auth.auth')
 
 @section('content')
-						@if (count(Session::get('errors')) > 0)
+						@if (count($errors) > 0)
 							<div class="col-md-9 xs-marginbot-20">
 								<strong>Whoops!</strong> There are problems in the input.<br>
 								<ul>
-									@foreach (Session::get('errors') as $error)
+									@foreach ($errors as $error)
 										{{ $error }}<br>
 									@endforeach
 								</ul>
