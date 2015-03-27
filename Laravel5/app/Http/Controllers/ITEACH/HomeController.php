@@ -21,7 +21,7 @@ class HomeController extends Controller {
 				return "logged in as faculty";
 			
 		else
-			return "logged as guest";
+			return view('iteach.dashboard.guest-home');
 
 	}
 
