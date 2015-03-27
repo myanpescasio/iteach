@@ -16,11 +16,12 @@ Route::get('/', 'WelcomeController@index');
 Route::get('index', 'ITEACH\AuthController@index');
 
 Route::get('login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@login']);
-Route::get('attempt_login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@attempt']);
+Route::post('attempt_login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@attempt']);
 
 Route::get('guest', 'ITEACH\AuthController@use_guest');
 
-Route::get('register', 'ITEACH\AuthController@signup');
+Route::get('register', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@signup']);
+Route::post('attempt_register', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@attempt_register']);
 
 Route::get('home', ['middleware' => 'auth', 'uses' => 'ITEACH\HomeController@home']);
 

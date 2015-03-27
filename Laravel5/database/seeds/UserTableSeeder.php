@@ -18,13 +18,13 @@ class UserTableSeeder extends Seeder {
 			'fname'=>'Isagani',
 			'lname'=>'Marquez',
 			'username'=>'Gani',
-			'email'=>'gani@gmail.com',
+			'employeeId'=>'0987654321',
 			'password'=> bcrypt('masterGani')],
 			['type'=>'faculty',
 			'fname'=>'CJ',
 			'lname'=>'Cruz',
 			'username'=>'CJ',
-			'email'=>'cj@gmail.com',
+			'employeeId'=>'1234567890',
 			'password'=> bcrypt('masterCJ')],
 		));
 	}

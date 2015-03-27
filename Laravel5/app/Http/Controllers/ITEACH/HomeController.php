@@ -18,7 +18,7 @@ class HomeController extends Controller {
 			if(Auth::User()->type == 'admin')	//uses the table attribute 'type' to check if admin or faculty
 				return "logged in as admin";
 			else
-				return "logged in as faculty";
+				return view('iteach.dashboard.facultyhome');
 			
 		else
 			return "logged as guest";
