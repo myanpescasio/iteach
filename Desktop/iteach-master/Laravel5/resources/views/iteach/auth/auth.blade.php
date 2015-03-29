@@ -36,13 +36,13 @@
 					<img id="sign-up-logo" src="img/logo-temp.png" class="marginbot-50">
 					
 						@if($data['type'] == 'li')
-							@if (count($data['errors']) > 0)
+							@if (count($errors) > 0)
 								<h2 id="sign-up-title" class="h-bold">LOGIN</h2>
 							@else
 								<h2 id="sign-up-title" class="h-bold animated bounceInDown">LOGIN</h2>
 							@endif
 						@else
-							@if (count($data['errors']) > 0)
+							@if (count($errors) > 0)
 								<h2 id="sign-up-title" class="h-bold">SIGN UP</h2>
 							@else
 								<h2 id="sign-up-title" class="h-bold animated bounceInDown">SIGN UP</h2>

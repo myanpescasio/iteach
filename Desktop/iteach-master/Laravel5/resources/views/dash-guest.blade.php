@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,7 +56,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Guest <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="index"><i class="fa fa-fw fa-power-off"></i>Back to Index</a>
                         </li>
                     </ul>
                 </li>
@@ -68,7 +68,7 @@
                         <a href="home"><i class="fa fa-fw fa-home"></i> Home </a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#view"><i class="fa fa-fw fa-list"></i> View</a>
+                        <a href="#" ><i class="fa fa-fw fa-list"></i> View</a>
                         <ul id="view">
                             <li>
                                 <a href="viewAll">All</a>

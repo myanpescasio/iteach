@@ -13,22 +13,27 @@
 
 Route::get('/', 'WelcomeController@index');
 
+//Home page
 Route::get('index', 'ITEACH\AuthController@index');
 
 Route::get('login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@login']);
-Route::get('attempt_login', 'ITEACH\AuthController@attempt');
+Route::get('attempt_login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@attempt']);
 
 Route::get('guest', 'ITEACH\AuthController@use_guest');
 
 Route::get('register', 'ITEACH\AuthController@signup');
 
 Route::get('home', ['middleware' => 'auth', 'uses' => 'ITEACH\HomeController@home']);
-Route::get('viewAll', 'ViewController@viewAll');
-Route::get('viewCourse', 'ViewController@viewCourse');
-Route::get('viewInstructor', 'ViewController@viewInstructor');
-Route::get('viewRoom', 'ViewController@viewRoom');
 
+//Route for the parser
 
+Route::get('parser', 'ITEACH\AdminParserController@parse');
+Route::get('uploadFile', 'ITEACH\AdminParserController@index');
+
+Route::get('viewAll', 'ITEACH\ViewController@viewAll');
+Route::get('viewCourse', 'ITEACH\ViewController@viewCourse');
+Route::get('viewInstructor', 'ITEACH\ViewController@viewInstructor');
+Route::get('viewRoom', 'ITEACH\ViewController@viewRoom');
 
 //No view has been made for this yet.
 Route::get('logout', function(){

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Input;
 use Session;
+use App\User;
 
 class AuthController extends Controller {
 
@@ -48,6 +49,49 @@ class AuthController extends Controller {
 		return redirect()->intended('login');	//This is done to hide submitted data from the url
 	
 	}
+
+
+	public function attempt_register(){
+
+		if(Input::get('username') == null)			//if no input (manually entered /attempt_login) is placed, redirect to index
+			return redirect()->intended('register');
+
+		$firstname = Input::get('firstName');
+		$lastname = Input::get('lastName');
+		$employeeID = Input::get('employeeID');
+		$username = Input::get('username');
+		$password1 = Input::get('password1');
+		$password2 = Input::get('password2');
+
+		$errors = [];
+		
+		$users = User::where('username', '=', $username)->get();
+		$emp = User::where('employeeId', '=', $employeeID)->get();
+
+
+		if(count($users) > 0){
+			$errors += ['user' => 'Username already exists!'];
+		}
+		if(count($emp) > 0){
+			$errors += ['emp' => 'Employee id already exists!'];
+		}
+		if($password1 != $password2){
+			$errors += ['pass' => 'Passwords do not match'];
+		}
+		
+		if(count($errors) == 0){
+			User::create(['type'=>'faculty','fname'=>$firstname,'lname'=>$lastname,'username'=>$username, 'employeeId' => $employeeID, 'password'=>bcrypt($password1)]);
+			return redirect()->intended('index');
+		}
+
+		//provides error data and places into temporary session
+		$old = ['firstName' => $firstname, 'lastName' => $lastname, 'username' => $username];
+		Session::put('errors', $errors);	//place into section
+		Session::put('old', $old);
+
+		return redirect()->intended('register');	//This is done to hide submitted data from the url
+	
+	}
 	
 	//Allows users to access home using guest sessions
 	public function use_guest(){
@@ -63,9 +107,10 @@ class AuthController extends Controller {
 		$data = [];
 		$data += ['type' => 'su'];
 		$errors = Session::get('errors', []);
-		$old = Session::get('old', ['username' => '']);
+//		$old = ['firstName' => '', 'lastName' => '', 'username' => ''];
+		$old = Session::get('old', ['firstName' => '', 'lastName' => '', 'username' => '']);
 		Session::forget('errors');
-		Session::put('old', $old);
+		Session::forget('old', $old);
 		
 		return view('iteach.auth.sign-up', compact('data', 'errors', 'old'));
 	}
