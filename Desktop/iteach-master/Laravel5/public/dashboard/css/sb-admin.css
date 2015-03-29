@@ -12,35 +12,9 @@ body {
 
 }
 
-
-
-.navbar-inverse .navbar-nav>li>a {
-  color: rgb(114, 189, 185);
-}
-
-.navbar-inverse .navbar-brand {
-    padding-top: 25px;
-  color: #FFF;
-  font-size: 30px;
-}
-
-.navbar-inverse .navbar-brand:hover {
-  color: #FFF;
-    
-}
-
-
-
 .navbar-fixed-top{
-    background-color: rgb(114, 189, 185);
-    
+    background-color: #FFF;
 }
-
-.navbar-inverse{
-    border-color:rgb(114, 189, 185);
-}
-
-
 
 @media(min-width:768px) {
     body {
@@ -76,7 +50,7 @@ body {
 /* Top Navigation */
 
 .top-nav {
-    padding: 0 15px 0px 0px;
+    padding: 0 15px;
 	
 }
 
@@ -86,11 +60,10 @@ body {
 }
 
 .top-nav>li>a {
-    padding-top: 21px;
-    padding-bottom: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     line-height: 20px;
-    color:#FFF;
-    font-size: 17px;
+    color: #72bdb9;
 }
 
 .top-nav>li>a:hover,
@@ -148,20 +121,19 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 65px;
+        top: 51px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: rgb(231,226,220);
+        background-color: #c9e5e8;
         height: 100%;
     }
 
     .side-nav li a {
         width: 225px;
-        font-size: 16px;
     }
     
     .side-nav li a:hover,
@@ -179,16 +151,11 @@ ul.alert-dropdown {
     display: block;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: rgb(114, 189, 185);
-    font-size: 16px;
+    color: #FFF;
 }
-.panel-default>.panel-heading{
-        background-color: rgb(114, 189, 185);
-        color: #fff;
-        text-decoration: none;
-}
+
 .side-nav>li>ul>li>a:hover {
-    color: #fff;
+    color: #DBD7CE;
 }
 
 /* Flot Chart Containers */
