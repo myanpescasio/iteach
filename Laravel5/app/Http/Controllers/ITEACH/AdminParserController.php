@@ -1,10 +1,9 @@
 <?php namespace App\Http\Controllers\ITEACH;
 
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
-use Illuminate\Http\Response;
+
+use Illuminate\Http\Request;
 
 class AdminParserController extends Controller {
 
@@ -13,75 +12,72 @@ class AdminParserController extends Controller {
 		return view("pages.upload");
 	}
 
-	public function upload_csv(){
-		 
-		$file = Request::file('filefield');							//get the data with name filefield in the form submitted
-		$extension = $file->getClientOriginalExtension();			//get the file type extension of the file(e.g. .jpg,.csv)
-		$fileName = $file->getFilename().'.'.$extension;			//create string with the name of the file plus its extension
-		Storage::disk('local')->put( $fileName, File::get($file));	//store into storage/app
-		$contents = Storage::get($fileName);						//read the contents of the uploaded file	
-		
+	public function parse() 
+	{	
+		$line['test'] = file('csv/cot.csv');			//read the whole .csv
 		$i = 0;
 
-		$flag = 0;
-		$tok = strtok($contents,",");
-		
-		while($tok !== false){		
+		foreach($line['test'] as $l){	//The loop that parses. This tokenizes the strings with , as the delimiter.
 
-			switch($flag){				//this switch is for controlling the distribution of data in tokenizing the line
-				case 0:
-					$faculty[$i] = $tok;
-					$flag = 1;
-					break;
-				case 1:
-					$course_num[$i] = $tok;
-					$flag = 2;
-					break;
-				case 2:
-					$section[$i] = $tok;
-					$flag = 3;
-					break;
-				case 3:
-					$time[$i] = $tok;
-					$flag = 4;
-					break;
-				case 4:
-					$day[$i] = $tok;
-					$flag = 5;
-					break;
-				case 5:
-					$room[$i] = $tok;
-					$flag = 6;
-					break;
-				case 6:
-					$slots[$i] = $tok;
-					$flag = 7;
-					break;
-				case 7:
-					$splitted = preg_split('#\s+#', $tok, null, PREG_SPLIT_NO_EMPTY);	//this just splits the 8th case where unit and faculty was parsed as one word
-					$units[$i] = $splitted[0];
-					if(count($splitted)!=1){
-						$i++;
-						$faculty[$i] = $splitted[1];
+			$data[$i]['line'] = $l;		//line read is being stored here.
+			$flag = 0;
+			$tok = strtok($data[$i]['line'],",");
+			while($tok !== false){		
+
+				switch($flag){				//this switch is for controlling the distribution of data in tokenizing the line
+					case 0:
+						$faculty[$i] = $tok;
 						$flag = 1;
-					}
-					break;
+						break;
+					case 1:
+						$course_num[$i] = $tok;
+						$flag = 2;
+						break;
+					case 2:
+						$section[$i] = $tok;
+						$flag = 3;
+						break;
+					case 3:
+						$time[$i] = $tok;
+						$flag = 4;
+						break;
+					case 4:
+						$day[$i] = $tok;
+						$flag = 5;
+						break;
+					case 5:
+						$room[$i] = $tok;
+						$flag = 6;
+						break;
+					case 6:
+						$slots[$i] = $tok;
+						$flag = 7;
+						break;
+					case 7:
+						$units[$i] = $tok;
+						break;
+				}
+
+				$tok = strtok(",");
 			}
-			$tok = strtok(",");
-		}
+
 			
+			$i++;
+		}
 
-		$data['faculty'] = $faculty ; 		//associative array of form "faculty" => [bautista,pabico]
-		$data['course_num'] = $course_num ;
-		$data['time'] = $time;
-		$data['day'] = $day;
-		$data['room'] = $room;
-		$data['slots'] = $slots;
-		$data['units'] = $units;
-		
-		//$data can now be passed on to model and be stored in db.
+		for($i=0;$i<count($course_num);$i++){	//for checking whether the data was passed correctly.
+			echo $faculty[$i];echo ' | '; 
+			echo $course_num[$i];echo ' | ';
+			echo $section[$i];echo ' | ';
+			echo $time[$i];echo ' | ';
+			echo $day [$i];echo ' | ';
+			echo $room [$i];echo ' | ';
+			echo $slots [$i];echo ' | ';
+			echo $units [$i];echo ' | ';
+			echo '<br/>';
+		}
 
-		return view("pages.parse",$data);		//add a second parameter here to pass the data to the view.
+		return view("pages.parse");		//add a second parameter here to pass the data to the view.
 	}
 
 }

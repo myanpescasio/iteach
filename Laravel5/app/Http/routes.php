@@ -17,24 +17,23 @@ Route::get('/', 'WelcomeController@index');
 Route::get('index', 'ITEACH\AuthController@index');
 
 Route::get('login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@login']);
-Route::post('attempt_login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@attempt']);
+Route::get('attempt_login', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@attempt']);
 
 Route::get('guest', 'ITEACH\AuthController@use_guest');
 
-Route::get('register', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@signup']);
-Route::post('attempt_register', ['middleware' => 'guest', 'uses' => 'ITEACH\AuthController@attempt_register']);
+Route::get('register', 'ITEACH\AuthController@signup');
 
 Route::get('home', ['middleware' => 'auth', 'uses' => 'ITEACH\HomeController@home']);
 
 //Route for the parser
 
-Route::get('upload', 'ITEACH\AdminParserController@index');
-Route::post('uploadFile', 'ITEACH\AdminParserController@upload_csv');
+Route::get('parser', 'ITEACH\AdminParserController@parse');
+Route::get('uploadFile', 'ITEACH\AdminParserController@index');
 
-Route::get('viewAll', 'ITEACH\GuestViewController@viewAll');
-Route::get('viewCourse', 'ITEACH\GuestViewController@viewCourse');
-Route::get('viewInstructor', 'ITEACH\GuestViewController@viewInstructor');
-Route::get('viewRoom', 'ITEACH\GuestViewController@viewRoom');
+Route::get('viewAll', 'ITEACH\ViewController@viewAll');
+Route::get('viewCourse', 'ITEACH\ViewController@viewCourse');
+Route::get('viewInstructor', 'ITEACH\ViewController@viewInstructor');
+Route::get('viewRoom', 'ITEACH\ViewController@viewRoom');
 
 //No view has been made for this yet.
 Route::get('logout', function(){

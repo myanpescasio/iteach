@@ -16,7 +16,7 @@
 						</div>
 						@endif
 	
-						<form id="contact-form" role="form" method="POST" action="{{ url('/attempt_login') }}">
+						<form id="contact-form" role="form" method="GET" action="{{ url('/attempt_login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<!-- Username & Password -->
@@ -41,7 +41,7 @@
 							<button type="submit" class="btn btn-skin btn-lg btn-block marginbot-10" id="btnContactUs">
 								Login
 							</button>
-							<a href="index" class="col-lg-offset-10">< Back</a>
+							<a href="#" class="col-lg-offset-10">< Back</a>
 							</div>
 
 						</div>
