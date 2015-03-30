@@ -68,7 +68,7 @@
                         <a href="home"><i class="fa fa-fw fa-home"></i> Home </a>
                     </li>
                     <li>
-                        <a href="#" ><i class="fa fa-fw fa-list"></i> View</a>
+                        <a><i class="fa fa-fw fa-list"></i> View</a>
                         <ul id="view">
                             <li>
                                 <a href="viewAll">All</a>
