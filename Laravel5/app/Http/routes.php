@@ -31,10 +31,10 @@ Route::get('home', ['middleware' => 'auth', 'uses' => 'ITEACH\HomeController@hom
 Route::get('upload', 'ITEACH\AdminParserController@index');
 Route::post('uploadFile', 'ITEACH\AdminParserController@upload_csv');
 
-Route::get('viewAll', 'ITEACH\GuestViewController@viewAll');
-Route::get('viewCourse', 'ITEACH\GuestViewController@viewCourse');
-Route::get('viewInstructor', 'ITEACH\GuestViewController@viewInstructor');
-Route::get('viewRoom', 'ITEACH\GuestViewController@viewRoom');
+Route::get('viewAll', 'ITEACH\ViewController@viewAll');
+Route::get('viewCourse', 'ITEACH\ViewController@viewCourse');
+Route::get('viewInstructor', 'ITEACH\ViewController@viewInstructor');
+Route::get('viewRoom', 'ITEACH\ViewController@viewRoom');
 
 //No view has been made for this yet.
 Route::get('logout', function(){
