@@ -2,9 +2,10 @@
 		
 @section('content')
 	@for($i=0;$i<count($course_num);$i++)	
-		{{$faculty[$i]}} | 
 		{{$course_num[$i]}} |
-		{{$time[$i]}} |
+		{{$course_title[$i]}} |
+		{{$studyOrTeach[$i]}} |
+		{{$start_time[$i]}} - {{$end_time[$i]}} |
 		{{$day[$i]}} |
 		{{$room[$i]}} |
 		{{$slots[$i]}} |

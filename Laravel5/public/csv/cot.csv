@@ -1,21 +1,20 @@
-Faculty,Course Number,Section,Time,Day,Room,Slots,Units
-Bautista,CMSC 123,B,10:00-1:00,WF,ICS LH 4,22,1.5
-Bautista,CMSC 123,B-1L,4:00-7:00,Mon,PC Lab 7,22,2
-Bautista,CMSC 124,T-2L,4:00-7:00,Tue,PC Lab 5,20,1.5
-Bautista,CMSC 124,T-3L,1:00-4:00,Wed,PC Lab 5,20,1.5
-Bautista,CMSC 124,B-1L,10:00-1:00,Mon,PC Lab 5,20,1.5
-Bautista,CMSC 127,S-3L,10:00-1:00,Wed,PC Lab 4,20,1.5
-Bautista,CMSC 127,ST-2L,1:00-4:00,Thu,PC Lab 4,20,1.5
-Bautista,Study,CMSC 227,1:00-4:00,Tue,ICS GS Room,0,3
-Bautista,Study,IT 226,4:00-7:00,Thu,PC Lab 1,0,3
-Pabico,CMSC 180,GH,4:00-6:00,Wed,ICS Conf Room,20,2
-Pabico,CMSC 180,GH-1L,4:00-7:00,Mon,PC Lab 8,20,1.5
-Pabico,CMSC 190,AR7(1),TBA,Mon,TBA,16,2
-Pabico,CMSC 190,AR7(2),TBA,Mon,TBA,6,2
-Pabico,CMSC 200,AR7,TBA,TBA,TBA,1,0
-Pabico,CMSC 215,Y,4:00-7:00,Tue,ICS LH 3,10,4.5
-Pabico,CMSC 300,AR3,TBA,TBA,TBA,4,0
-Pabico,CMSC 341,WX,1:00-4:00,Thu,ICS Conf Room,5,4.5
-Pabico,IT 295,AR2(1),TBA,TBA,TBA,4,0
-Pabico,IT 295,AR2(2),TBA,TBA,TBA,4,0
-Pabico,Study,TBA,TBA,TBA,TBA,0,1
+Day,Course Number,Course Title,Section,Study/Teach,Start Time,End Time,Room,Slots,Units
+W/F,CMSC 123,Data Structures,B,Teach,10:00,1:00,ICS LH 4,22,1.5
+M,CMSC 123,Data Structures,B-1L,Teach,4:00,7:00,PC Lab 7,22,2
+T,CMSC 124,Design and Implementation of Programming Languages,T-2L,Teach,4:00,7:00,PC Lab 5,20,1.5
+W,CMSC 124,Design and Implementation of Programming Languages,T-3L,Teach,1:00,4:00,PC Lab 5,20,1.5
+M,CMSC 124,Design and Implementation of Programming Languages,B-1L,Teach,10:00,1:00,PC Lab 5,20,1.5
+W,CMSC 127,File Processing and Database Systems,S-3L,Teach,10:00,1:00,PC Lab 4,20,1.5
+TH,CMSC 127,File Processing and Database Systems,ST-2L,Teach,1:00,4:00,PC Lab 4,20,1.5
+T,CMSC 227,Advanced Database Systems,B,Study,1:00,4:00,ICS GS Room,0,3
+TH,IT 226,Enterprise Information Systems,A,Study,4:00,7:00,PC Lab 1,0,3
+W,CMSC 180,Introduction to Parallel Computing,GH,Teach,4:00,6:00,ICS Conf Room,20,2
+M,CMSC 180,Introduction to Parallel Computing,GH-1L,Teach,4:00,7:00,PC Lab 8,20,1.5
+M,CMSC 190,Special Problems in Computer Science,AR7(1),Teach,TBA,TBA,TBA,16,2
+M,CMSC 190,Special Problems in Computer Science,AR7(2),Teach,TBA,TBA,TBA,6,2
+M/W,CMSC 200,Undergraduate Thesis,AR7,Teach,TBA,TBA,TBA,1,0
+T,CMSC 215,Advanced Computer Systems,Y,Teach,4:00,7:00,ICS LH 3,10,4.5
+M/W,CMSC 300,Master's Thesis,AR3,Teach,TBA,TBA,TBA,4,0
+TH,CMSC 341,Advanced Theory of Computation,WX,Teach,1:00,4:00,ICS Conf Room,5,4.5
+TH/F,IT 295,IT-Based Application Project,AR2(1),Study,TBA,TBA,TBA,4,0
+M/T,IT 295,IT-Based Application Project,AR2(2),Study,TBA,TBA,TBA,4,0
