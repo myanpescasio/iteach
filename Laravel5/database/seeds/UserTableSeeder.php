@@ -26,6 +26,19 @@ class UserTableSeeder extends Seeder {
 			'username'=>'CJ',
 			'employeeId'=>'1234567890',
 			'password'=> bcrypt('masterCJ')],
+			['type'=>'admin',
+			'fname'=>'Kristine Elaine',
+			'lname'=>'Bautista',
+			'username'=>'kepbautista',
+			'employeeId'=>'005',
+			'password'=> bcrypt('kepbautista')],
+			['type'=>'faculty',
+			'fname'=>'Marie Betel',
+			'lname'=>'De Robles',
+			'username'=>'mbbderobles',
+			'employeeId'=>'040',
+			'password'=> bcrypt('mbbderobles')],
+
 		));
 	}
 }
