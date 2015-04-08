@@ -1,0 +1,50 @@
+
+
+
+img{
+	margin: 1px;
+	height:99%;
+	width:99%;
+}
+
+#wrap {
+	width: 1020px; 
+	margin: 100 auto;
+} 
+
+li#teach{
+	float:left; 
+	position:relative; 
+	display:inline-block; 
+	width:250px; 
+	height:250px;
+	margin:30px; 
+	padding:0px; 
+	background:#fff; 
+	-webkit-box-shadow:0 0 5px rgba(0,0,0,.35);
+	-moz-boz-shadow: 0 0 5px rgba(0,0,0,.35);
+	box-shadow:0 0 5px rgba(0,0,0,.35);
+}
+li#teach #label {
+	position:absolute;
+	height:46px; 
+	width:250px;
+	background:rgba(0,0,0,.45); 
+	overflow:hidden;
+	bottom:0px;
+	left:0px; 
+	padding: 0 10px;
+	-webkit-transition:height 0.3s;
+	-moz-transition:height 0.3s;
+	-o-transition:height 0.3s;
+	-ms-transition:height 0.3s;
+	transition:height 0.3s;
+	color:#fff;
+	line-height:50px;
+	font-size:1em;
+	text-align: center;
+}
+li#teach:hover #label {
+	height:20%;
+}
+
