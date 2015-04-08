@@ -16,13 +16,13 @@ class AdminParserController extends Controller {
 
 	public function index() 
 	{
-		return view("pages.upload");
+		return view('iteach.admin.uploadCSVFile');
 	}
 
-	public function upload_csv(){
+	public function processCSV(){
 		 
-		$file = Request::file('filefield');							//get the data with name filefield in the form submitted
-		$extension = $file->getClientOriginalExtension();			//get the file type extension of the file(e.g. .jpg,.csv)
+		$file = Request::file('inputFile');							//get the data with name filefield in the form submitted
+		$extension = $file->getClientOriginalName();			//get the file type extension of the file(e.g. .jpg,.csv)
 		$fileName = $file->getFilename().'.'.$extension;			//create string with the name of the file plus its extension
 		Storage::disk('local')->put( $fileName, File::get($file));	//store into storage/app
 		$contents = Storage::get($fileName);						//read the contents of the uploaded file	
@@ -52,7 +52,7 @@ class AdminParserController extends Controller {
 					$flag = 4;
 					break;
 				case 4:
-					$studyOrTeach[$i] = $tok;
+					$type[$i] = $tok;
 					$flag = 5;
 					break;
 				case 5:
@@ -72,6 +72,10 @@ class AdminParserController extends Controller {
 					$flag = 9;
 					break;
 				case 9:
+					$ini_instructor[$i] = $tok;
+					$flag = 10;
+					break;
+				case 10:
 					$splitted = preg_split('#\s+#',$tok,null,PREG_SPLIT_NO_EMPTY);
 					$units[$i] = $splitted[0];
 					if(count($splitted)!=1){
@@ -114,16 +118,17 @@ class AdminParserController extends Controller {
 			 }
 			 $results = section::where('sectionNum','like',$section[$i])->get();
 			 if(COUNT($results) == 0){
-			 	if($studyOrTeach[$i] == "Teach"){
-				 	$addDb = new section;
-				 	$addDb->sectionNum = $section[$i];
-				 	$addDb->courseNum = $course_num[$i];
-				 	$addDb->units = $units[$i];
-				 	$addDb->roomNum = $room[$i];
-				 	$addDb->save();
-			 	}
+				 $addDb = new section;
+				 $addDb->sectionNum = $section[$i];
+				 $addDb->courseNum = $course_num[$i];
+				 $addDb->type = $type[$i];
+				 $addDb->employeeNum = $ini_instructor[$i];
+				 $addDb->units = $units[$i];
+				 $addDb->roomNum = $room[$i];
+				 $addDb->save();
 			 }
-			$results = studyTimeSlot::where('studyName','like',$course_num[$i]);
+			
+			/*$results = studyTimeSlot::where('studyName','like',$course_num[$i]);
 		 	if(COUNT($results) == 0){
 			 	if($studyOrTeach[$i] == "Study"){
 			 		if($results->studyName == $section[$i]){
@@ -139,7 +144,7 @@ class AdminParserController extends Controller {
 					 	}
 					 }
 				 }
-			}
+			}*/
 	
 		}
 
@@ -149,14 +154,15 @@ class AdminParserController extends Controller {
 		$data['course_num'] = $course_num;
 		$data['course_title'] = $course_title;
 		$data['section'] = $section;
-		$data['studyOrTeach'] = $studyOrTeach;
+		$data['type'] = $type;
 		$data['start_time'] = $start_time;
 		$data['end_time'] = $end_time;
 		$data['room'] = $room;
 		$data['slots'] = $slots;
+		$data['ini_instructor'] = $ini_instructor;
 		$data['units'] = $units;
 
-		return view("pages.parse",$data);		//add a second parameter here to pass the data to the view.
+		return view("iteach.admin.successfulUpload",$data);		//add a second parameter here to pass the data to the view.
 	}
 
 }

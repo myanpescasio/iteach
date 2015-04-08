@@ -14,7 +14,6 @@ class CreateCoursesTable extends Migration {
 	{
 		Schema::create('courses', function(Blueprint $table)
 			{
-				
 				$table->string('courseNum')->unique();
 				$table->string('courseTitle');
 				$table->rememberToken();

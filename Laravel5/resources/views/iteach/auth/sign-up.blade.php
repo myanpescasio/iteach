@@ -15,14 +15,6 @@
 						<form id="contact-form" role="form" method="POST" action="{{ url('/attempt_register') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<!-- First Name & Last Name -->	
-						<div class="row marginbot-20">
-							<div class="col-md-6 xs-marginbot-20">
-								<input type="text" class="form-control input-lg" id="firstName" name="firstName" placeholder="First Name" required="required" value="{{ $old['firstName'] }}" />
-							</div>
-							<div class="col-md-6">
-								<input type="text" class="form-control input-lg" id="lastName"  name="lastName" placeholder="Last Name" required="required" value="{{ $old['lastName'] }}"/>
-							</div>
-						</div>
 						<!-- Username & Email Address -->
 						<div class="row">
 							<div class="col-md-12">

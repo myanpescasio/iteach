@@ -14,7 +14,7 @@ class CreateStudytimeslotsTable extends Migration {
 	{
 		Schema::create('study_time_slots', function(Blueprint $table)
 		{
-			$table->string('studyName');
+			$table->string('studyName')->unique();
 			$table->string('startTime');
 			$table->string('endTime');
 			$table->string('day');

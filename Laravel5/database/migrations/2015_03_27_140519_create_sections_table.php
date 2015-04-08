@@ -16,6 +16,7 @@ class CreateSectionsTable extends Migration {
 		{
 			$table->string('sectionNum')->unique();
 			$table->string('courseNum');
+			$table->string('type');
 			$table->float('units');
 			$table->string('employeeNum');
 			$table->string('roomNum');

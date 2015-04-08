@@ -56,8 +56,6 @@ class AuthController extends Controller {
 		if(Input::get('username') == null)			//if no input (manually entered /attempt_login) is placed, redirect to index
 			return redirect()->intended('register');
 
-		$firstname = Input::get('firstName');
-		$lastname = Input::get('lastName');
 		$employeeID = Input::get('employeeID');
 		$username = Input::get('username');
 		$password1 = Input::get('password1');
@@ -80,12 +78,12 @@ class AuthController extends Controller {
 		}
 		
 		if(count($errors) == 0){
-			User::create(['type'=>'faculty','fname'=>$firstname,'lname'=>$lastname,'username'=>$username, 'employeeId' => $employeeID, 'password'=>bcrypt($password1)]);
+			User::create(['type'=>'faculty','username'=>$username, 'employeeId' => $employeeID, 'password'=>bcrypt($password1)]);
 			return redirect()->intended('index');
 		}
 
 		//provides error data and places into temporary session
-		$old = ['firstName' => $firstname, 'lastName' => $lastname, 'username' => $username];
+		$old = ['username' => $username];
 		Session::put('errors', $errors);	//place into section
 		Session::put('old', $old);
 
@@ -108,7 +106,7 @@ class AuthController extends Controller {
 		$data += ['type' => 'su'];
 		$errors = Session::get('errors', []);
 //		$old = ['firstName' => '', 'lastName' => '', 'username' => ''];
-		$old = Session::get('old', ['firstName' => '', 'lastName' => '', 'username' => '']);
+		$old = Session::get('old', [ 'username' => '']);
 		Session::forget('errors');
 		Session::forget('old', $old);
 		
