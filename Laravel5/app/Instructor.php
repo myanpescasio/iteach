@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class courseTimeSlot extends Model {
+class Instructor extends Model {
 
 	//
 

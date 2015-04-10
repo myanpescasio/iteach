@@ -16,6 +16,10 @@ class CreateCoursesTable extends Migration {
 			{
 				$table->string('courseNum')->unique();
 				$table->string('courseTitle');
+				$table->string('classification');
+				$table->string('semOffered');
+				$table->string('preReq');
+				$table->string('studentUnits');
 				$table->rememberToken();
 				$table->timestamps();
 			});

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCoursetimeslotsTable extends Migration {
+class CreateDefaultunitsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,16 +12,14 @@ class CreateCoursetimeslotsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('course_time_slots', function(Blueprint $table)
+		Schema::create('defaultunits', function(Blueprint $table)
 		{
-			$table->string('sectionNum')->unique();
-			$table->string('startTime');
-			$table->string('endTime');
-			$table->string('day');
+			$table->string('type');
+			$table->string('classification');
+			$table->float('unitValue');
+			$table->unique(['type','classification']);
 			$table->timestamps();
 		});
-
-		
 	}
 
 	/**
@@ -31,7 +29,7 @@ class CreateCoursetimeslotsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('course_time_slots');
+		Schema::drop('defaultunits');
 	}
 
 }
