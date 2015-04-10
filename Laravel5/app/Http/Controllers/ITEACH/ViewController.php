@@ -60,8 +60,13 @@ class ViewController extends Controller {
 				return "logged in as faculty";
 			
 		else{
-			$intructors['intructors'] =  intructor::orderBy('lname','ASC')
-													->get();
+			$intructors['intructors'] =  intructor::join('sections', 'intructors.employeeId', '=', 'sections.employeeNum')
+							
+								      ->join('courses', 'sections.courseNum', '=', 'courses.courseNum')
+								      ->orderBy('lname','ASC')
+								      ->orderBy('courses.courseNum','ASC')
+								      ->orderBy('sections.sectionNum','ASC')
+								      ->get();
 			return view('iteach.dashboard.viewInstructor', $intructors);
 		}
 	}
