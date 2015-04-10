@@ -4,6 +4,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use Illuminate\Http\Request;
+use App\intructor;
+use App\room;
+use App\course;
+use App\section;
+use App\courseTimeSlot;
+use App\studyTimeSlot;
 
 class ViewController extends Controller {
 
@@ -16,11 +22,13 @@ class ViewController extends Controller {
 			else
 				return "logged in as faculty";
 			
-		else
-			return view('iteach.dashboard.viewAll');
-
-		
-
+		else{
+			$sections['sections'] = section::join('courses', 'sections.courseNum', '=', 'courses.courseNum')
+											->join('intructors', 'sections.employeeNum', '=', 'intructors.employeeId')
+											->join('course_time_slots', 'sections.sectionNum', '=', 'course_time_slots.sectionNum')
+											->get();
+			return view('iteach.dashboard.viewAll', $sections);
+		}
 	}
 	function viewCourse(){
 		if(Auth::check())	//If authentication is done, user is not guest
@@ -32,8 +40,12 @@ class ViewController extends Controller {
 				return "logged in as faculty";
 			
 		else{
-			$courses = ["CMSC 125","CMSC 132","CMSC 170"];
-			return view('iteach.dashboard.viewCourse',compact('courses'));
+			$sections['sections'] = section::join('courses', 'sections.courseNum', '=', 'courses.courseNum')
+											->join('intructors', 'sections.employeeNum', '=', 'intructors.employeeId')
+											->join('course_time_slots', 'sections.sectionNum', '=', 'course_time_slots.sectionNum')
+											->get();
+			$courses['courses'] = course::all();
+			return view('iteach.dashboard.viewCourse', $sections, $courses);
 		}
 	}
 	function viewInstructor(){
@@ -45,9 +57,11 @@ class ViewController extends Controller {
 			else
 				return "logged in as faculty";
 			
-		else
-			return view('iteach.dashboard.viewInstructor');
-
+		else{
+			$intructors['intructors'] =  intructor::orderBy('lname','ASC')
+													->get();
+			return view('iteach.dashboard.viewInstructor', $intructors);
+		}
 	}
 	function viewRoom(){
 

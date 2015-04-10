@@ -262,3 +262,53 @@ ul.alert-dropdown {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+.tg  {
+    border-collapse:collapse;
+    border-spacing:0;
+    margin: 0px 0px 0px 175px;
+    max-width: 100%;
+}
+.tg td{
+    
+    font-size:14px;
+    padding:4px 20px;
+    border-style:solid;
+    border-width:1px;
+    overflow:hidden;
+    word-break:normal;
+}
+.tg th{
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    padding:4px 20px;
+    border-style:solid;
+    border-width:1px;
+    overflow:hidden;
+    word-break:normal;
+}
+.tg .tg-jecd{
+    background-color:#e7e2dc
+}
+.tg .tg-vx3v{
+    font-weight:bold;
+    background-color:#7bc4c0;
+    text-align:center
+}
+.tg .tg-t3b7{
+    background-color:#e7e2dc;
+    color:#000000;
+    text-align:center}
+.tg .tg-7l82{
+    font-weight:bold;
+    background-color:#e7e2dc
+}
+.tg .tg-jyom{
+    background-color:#7bc4c0;
+    text-align:center
+}
+.tg .tg-nc2p{
+    background-color:#e7e2dc;
+    text-align:center
+}
