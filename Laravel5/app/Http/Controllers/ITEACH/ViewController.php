@@ -23,9 +23,11 @@ class ViewController extends Controller {
 				return "logged in as faculty";
 			
 		else{
-			$sections['sections'] = section::join('courses', 'sections.courseNum', '=', 'courses.courseNum')
+			$sections['sections'] = section::join('course_time_slots', 'sections.sectionNum', '=', 'course_time_slots.sectionNum')
+											->join('courses', 'sections.courseNum', '=', 'courses.courseNum')
 											->join('intructors', 'sections.employeeNum', '=', 'intructors.employeeId')
-											->join('course_time_slots', 'sections.sectionNum', '=', 'course_time_slots.sectionNum')
+											->orderBy('courses.courseNum','ASC')
+											->orderBy('sections.sectionNum','ASC')
 											->get();
 			return view('iteach.dashboard.viewAll', $sections);
 		}
