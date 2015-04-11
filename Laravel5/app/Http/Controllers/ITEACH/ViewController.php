@@ -73,8 +73,12 @@ class ViewController extends Controller {
 			else
 				return "logged in as faculty";
 			
-		else
-			return view('iteach.dashboard.viewRoom');
-
+		else{
+			$rooms['rooms'] = room::all();
+			$sections['sections'] = section::all();
+			$intructors['intructors'] = intructor::all();
+			$courseTimeSlots['course_time_slots'] = courseTimeSlot::all();
+			return view('iteach.dashboard.viewRoom', $rooms, $sections, $intructors, $courseTimeSlots);
+		}
 	}
 }
