@@ -14,12 +14,17 @@ class CreateSectionsTable extends Migration {
 	{
 		Schema::create('sections', function(Blueprint $table)
 		{
-			$table->string('sectionNum')->unique();
-			$table->string('courseNum');
 			$table->string('type');
-			$table->float('units');
-			$table->string('employeeNum');
+			$table->string('courseNum');
+			$table->string('sectionNum');
+			$table->string('startTime');
+			$table->string('endTime');
+			$table->string('day');
 			$table->string('roomNum');
+			$table->string('employeeId');
+			$table->string('classSize');
+			$table->float('teachingUnits');
+			$table->unique(['courseNum','sectionNum']);
 			$table->rememberToken();
 			$table->timestamps();
 		});

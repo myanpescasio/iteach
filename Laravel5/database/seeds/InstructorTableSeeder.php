@@ -12,8 +12,8 @@ class InstructorTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		DB::table('intructors')->delete();
-		DB::table('intructors')->insert(array(
+		DB::table('instructors')->delete();
+		DB::table('instructors')->insert(array(
 			['fname'=>'Ivy Joy',
 			'lname'=>'Aguila',
 			'employeeId'=>'101',
