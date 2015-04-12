@@ -83,9 +83,8 @@ class ViewController extends Controller {
 		else{
 			$rooms['rooms'] = room::all();
 			$sections['sections'] = section::all();
-			$intructors['intructors'] = intructor::all();
-			$courseTimeSlots['course_time_slots'] = courseTimeSlot::all();
-			return view('iteach.dashboard.viewRoom', $rooms, $sections, $intructors, $courseTimeSlots);
+			$instructors['instructors'] = instructor::all();
+			return view('iteach.dashboard.viewRoom', $rooms, $sections, $instructors);
 		}
 	}
 }

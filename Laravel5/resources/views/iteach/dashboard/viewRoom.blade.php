@@ -34,10 +34,11 @@
 									  </tr>
 									  @for($j=7; $j!=12; $j++)
 										<tr>
-									    	<td class="tg-jecd">{{$j}}:00 - {{$j+1}}:00/td>
-									    	@for($k=0; $k!=count($courseTimeSlots); $k++)
-									    		@if({{$courseTimeSlots[$k]->day}} == "M")
-									    			@if({{$courseTimeSlots[$k]->startTime}} == "{{$j}}:00")
+									    	<td class="tg-jecd">{{$j}}:00 - {{$j+1}}:00</td>
+									    	<?php $st= $j.":00"; ?>
+									    	@for($k=0; $k!=count($sections); $k++)
+									    		@if($sections[$k]->day == "M")
+									    			@if($sections[$k]->startTime == $st)
 									    				<td class="tg-031e">lol</td>
 									    			@endif
 									    		@endif
