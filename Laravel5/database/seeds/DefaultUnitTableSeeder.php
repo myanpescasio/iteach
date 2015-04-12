@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-class UserTableSeeder extends Seeder {
+class DefaultUnitTableSeeder extends Seeder {
 
 	/**
 	 * Run the database seeds.
@@ -12,8 +12,8 @@ class UserTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		DB::table('users')->delete();
-		DB::table('users')->insert(array(
+		DB::table('defaultunits')->delete();
+		DB::table('defaultunits')->insert(array(
 			['type'=>'Lecture',
 			'classification'=>'Undergraduate',
 			'unitValue'=>3.0],

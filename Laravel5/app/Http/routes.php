@@ -47,6 +47,7 @@ Route::get('viewAll', 'ITEACH\ViewController@viewAll');
 Route::get('viewCourse', 'ITEACH\ViewController@viewCourse');
 Route::get('viewInstructor', 'ITEACH\ViewController@viewInstructor');
 Route::get('viewRoom', 'ITEACH\ViewController@viewRoom');
+
 //No view has been made for this yet.
 Route::get('logout', function(){
 	Session::forget('guest');

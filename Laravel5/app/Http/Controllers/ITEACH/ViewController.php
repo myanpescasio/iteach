@@ -4,7 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use Illuminate\Http\Request;
-use App\intructor;
+use DB;
+use App\Instructor;
 use App\room;
 use App\course;
 use App\section;
@@ -23,9 +24,8 @@ class ViewController extends Controller {
 				return "logged in as faculty";
 			
 		else{
-			$sections['sections'] = section::join('course_time_slots', 'sections.sectionNum', '=', 'course_time_slots.sectionNum')
-											->join('courses', 'sections.courseNum', '=', 'courses.courseNum')
-											->join('intructors', 'sections.employeeNum', '=', 'intructors.employeeId')
+			$sections['sections'] = section::join('courses', 'sections.courseNum', '=', 'courses.courseNum')
+											->join('instructors', 'sections.employeeId', '=', 'instructors.employeeId')
 											->orderBy('courses.courseNum','ASC')
 											->orderBy('sections.sectionNum','ASC')
 											->get();
@@ -43,8 +43,7 @@ class ViewController extends Controller {
 			
 		else{
 			$sections['sections'] = section::join('courses', 'sections.courseNum', '=', 'courses.courseNum')
-											->join('intructors', 'sections.employeeNum', '=', 'intructors.employeeId')
-											->join('course_time_slots', 'sections.sectionNum', '=', 'course_time_slots.sectionNum')
+											->join('instructors', 'sections.employeeId', '=', 'instructors.employeeId')
 											->get();
 			$courses['courses'] = course::all();
 			return view('iteach.dashboard.viewCourse', $sections, $courses);
@@ -60,14 +59,15 @@ class ViewController extends Controller {
 				return "logged in as faculty";
 			
 		else{
-			$intructors['intructors'] =  intructor::join('sections', 'intructors.employeeId', '=', 'sections.employeeNum')
-							
+			$allInstructors['allInstructors'] = instructor::orderBy('lname','ASC')
+											->get();
+			$instructors['instructors'] = instructor::join('sections', 'instructors.employeeId', '=', 'sections.employeeId')
 								      ->join('courses', 'sections.courseNum', '=', 'courses.courseNum')
 								      ->orderBy('lname','ASC')
 								      ->orderBy('courses.courseNum','ASC')
 								      ->orderBy('sections.sectionNum','ASC')
 								      ->get();
-			return view('iteach.dashboard.viewInstructor', $intructors);
+			return view('iteach.dashboard.viewInstructor', $instructors, $allInstructors);
 		}
 	}
 	function viewRoom(){

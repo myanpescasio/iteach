@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Instructor extends Model {
+class instructor extends Model {
 
 	//
 

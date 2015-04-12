@@ -16,12 +16,13 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion{{$i}}" href="#collapse{{$i}}">{{$sections[$i]->courseNum}} : {{$sections[$i]->courseTitle}}</a>
+                            <a data-toggle="collapse" data-parent="#accordion{{$i}}" href="#collapse{{$i}}">{{$sections[$i]->courseNum}} - {{$sections[$i]->courseTitle}}</a>
                         </h4>
                     </div>
                     <div id="collapse{{$i}}" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div class="table-responsive">
+                                <div><strong>Semester Offered:</strong> {{$sections[$i]->semOffered}}&nbsp&nbsp&nbsp&nbsp&nbsp<strong>Prerequisites:</strong> {{$sections[$i]->preReq}} </div>
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -32,6 +33,7 @@
                                             <th>Day</th>
                                             <th>Room</th>
                                             <th>Instructor</th>
+                                            <th>Class Size</th>
                                         </tr>
                                     </thead>
                                         <?php $cn = $sections[$i]->courseNum; ?>
@@ -45,7 +47,8 @@
                                                 <td>{{$sections[$i]->endTime}}</td>
                                                 <td>{{$sections[$i]->day}}</td>
                                                 <td>{{$sections[$i]->roomNum}}</td>
-                                                <td>{{$sections[$i]->lname}}</td>                                      
+                                                <td>{{$sections[$i]->lname}}</td>
+                                                <td>{{$sections[$i]->classSize}}</td>                                    
                                                 </tr>
                                             <?php $i++; ?>
                                         @endwhile
