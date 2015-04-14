@@ -17,7 +17,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lecture',
 			'courseNum'=>'CMSC 2',
 			'sectionNum'=>'E',
-			'startTime'=>'1:00'
+			'startTime'=>'1:00',
 			'endTime'=>'2:00',
 			'day'=>'W/F',
 			'roomNum'=>'ICS MH',
@@ -27,7 +27,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 2',
 			'sectionNum'=>'E-1L',
-			'startTime'=>'10:00'
+			'startTime'=>'10:00',
 			'endTime'=>'1:00',
 			'day'=>'T',
 			'roomNum'=>'PC LAB 2',
@@ -37,7 +37,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 2',
 			'sectionNum'=>'E-2L',
-			'startTime'=>'4:00'
+			'startTime'=>'4:00',
 			'endTime'=>'7:00',
 			'day'=>'T',
 			'roomNum'=>'PC LAB 2',
@@ -47,7 +47,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 2',
 			'sectionNum'=>'E-3L',
-			'startTime'=>'10:00'
+			'startTime'=>'10:00',
 			'endTime'=>'1:00',
 			'day'=>'W',
 			'roomNum'=>'PC LAB 2',
@@ -57,7 +57,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 2',
 			'sectionNum'=>'E-4L',
-			'startTime'=>'10:00'
+			'startTime'=>'10:00',
 			'endTime'=>'1:00',
 			'day'=>'TH',
 			'roomNum'=>'PC LAB 2',
@@ -67,7 +67,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lecture',
 			'courseNum'=>'CMSC 11',
 			'sectionNum'=>'T',
-			'startTime'=>'9:00'
+			'startTime'=>'9:00',
 			'endTime'=>'10:00',
 			'day'=>'T/TH',
 			'roomNum'=>'ICS MH',
@@ -77,7 +77,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 11',
 			'sectionNum'=>'T-1L',
-			'startTime'=>'10:00'
+			'startTime'=>'10:00',
 			'endTime'=>'1:00',
 			'day'=>'T',
 			'roomNum'=>'PC LAB 3',
@@ -87,7 +87,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 11',
 			'sectionNum'=>'T-2L',
-			'startTime'=>'4:00'
+			'startTime'=>'4:00',
 			'endTime'=>'7:00',
 			'day'=>'T',
 			'roomNum'=>'PC LAB 3',
@@ -97,7 +97,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lecture',
 			'courseNum'=>'CMSC 11',
 			'sectionNum'=>'U',
-			'startTime'=>'10:00'
+			'startTime'=>'10:00',
 			'endTime'=>'11:00',
 			'day'=>'T/TH',
 			'roomNum'=>'ICS MH',
@@ -107,7 +107,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 11',
 			'sectionNum'=>'U-1L',
-			'startTime'=>'1:00'
+			'startTime'=>'1:00',
 			'endTime'=>'4:00',
 			'day'=>'T',
 			'roomNum'=>'PC LAB 3',
@@ -117,7 +117,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 11',
 			'sectionNum'=>'U-2L',
-			'startTime'=>'10:00'
+			'startTime'=>'10:00',
 			'endTime'=>'1:00',
 			'day'=>'W',
 			'roomNum'=>'PC LAB 3',
@@ -128,7 +128,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lecture',
 			'courseNum'=>'CMSC 21',
 			'sectionNum'=>'ST',
-			'startTime'=>'8:00'
+			'startTime'=>'8:00',
 			'endTime'=>'9:00',
 			'day'=>'T/TH',
 			'roomNum'=>'ICS MH',
@@ -138,7 +138,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 21',
 			'sectionNum'=>'ST-1L',
-			'startTime'=>'1:00'
+			'startTime'=>'1:00',
 			'endTime'=>'4:00',
 			'day'=>'T',
 			'roomNum'=>'PC LAB 4',
@@ -148,7 +148,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 21',
 			'sectionNum'=>'ST-2L',
-			'startTime'=>'1:00'
+			'startTime'=>'1:00',
 			'endTime'=>'4:00',
 			'day'=>'W',
 			'roomNum'=>'PC LAB 2',
@@ -159,7 +159,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lecture',
 			'courseNum'=>'CMSC 141',
 			'sectionNum'=>'D',
-			'startTime'=>'12:00'
+			'startTime'=>'12:00',
 			'endTime'=>'1:00',
 			'day'=>'W/F',
 			'roomNum'=>'ICS MH',
@@ -169,7 +169,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 141',
 			'sectionNum'=>'D-1L',
-			'startTime'=>'1:00'
+			'startTime'=>'1:00',
 			'endTime'=>'4:00',
 			'day'=>'M',
 			'roomNum'=>'PC LAB 8',
@@ -179,7 +179,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 141',
 			'sectionNum'=>'D-2L',
-			'startTime'=>'1:00'
+			'startTime'=>'1:00',
 			'endTime'=>'4:00',
 			'day'=>'T',
 			'roomNum'=>'PC LAB 8',
@@ -190,7 +190,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Sect',
 			'courseNum'=>'CMSC 200',
 			'sectionNum'=>'AR1',
-			'startTime'=>'TBA'
+			'startTime'=>'TBA',
 			'endTime'=>'TBA',
 			'day'=>'M',
 			'roomNum'=>'TBA',
@@ -200,7 +200,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Sect',
 			'courseNum'=>'CMSC 200',
 			'sectionNum'=>'AR2',
-			'startTime'=>'TBA'
+			'startTime'=>'TBA',
 			'endTime'=>'TBA',
 			'day'=>'M',
 			'roomNum'=>'TBA',
@@ -211,7 +211,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Sect',
 			'courseNum'=>'CMSC 215',
 			'sectionNum'=>'Y',
-			'startTime'=>'4:00'
+			'startTime'=>'4:00',
 			'endTime'=>'7:00',
 			'day'=>'T',
 			'roomNum'=>'ICS LH 3',
@@ -221,7 +221,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Sect',
 			'courseNum'=>'CMSC 227',
 			'sectionNum'=>'WX',
-			'startTime'=>'1:00'
+			'startTime'=>'1:00',
 			'endTime'=>'4:00',
 			'day'=>'T',
 			'roomNum'=>'ICS GS Room',
@@ -229,10 +229,10 @@ class SectionTableSeeder extends Seeder {
 			'classSize'=>'13',
 			'teachingUnits'=>4.5],
 
-			['type'=>'Lecture',
+			/*['type'=>'Lecture',
 			'courseNum'=>'CMSC 210',
 			'sectionNum'=>'EF',
-			'startTime'=>'2:00'
+			'startTime'=>'2:00',
 			'endTime'=>'4:00',
 			'day'=>'M',
 			'roomNum'=>'ICS GS Room',
@@ -242,18 +242,18 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 210',
 			'sectionNum'=>'EF-1L',
-			'startTime'=>'4:00'
+			'startTime'=>'4:00',
 			'endTime'=>'7:00',
 			'day'=>'M',
 			'roomNum'=>'PC LAB 6',
 			'employeeId'=>'111',
 			'classSize'=>'13',
-			'teachingUnits'=>2.25],
+			'teachingUnits'=>2.25],*/
 		
 			['type'=>'Lecture',
 			'courseNum'=>'CMSC 210',
 			'sectionNum'=>'EF',
-			'startTime'=>'2:00'
+			'startTime'=>'2:00',
 			'endTime'=>'4:00',
 			'day'=>'F',
 			'roomNum'=>'ICS GS Room',
@@ -263,7 +263,7 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Lab',
 			'courseNum'=>'CMSC 210',
 			'sectionNum'=>'EF-1L',
-			'startTime'=>'4:00'
+			'startTime'=>'4:00',
 			'endTime'=>'7:00',
 			'day'=>'F',
 			'roomNum'=>'PC LAB 1',
@@ -274,13 +274,13 @@ class SectionTableSeeder extends Seeder {
 			['type'=>'Sect',
 			'courseNum'=>'CMSC 400',
 			'sectionNum'=>'AR1',
-			'startTime'=>'TBA'
+			'startTime'=>'TBA',
 			'endTime'=>'TBA',
 			'day'=>'TBA',
 			'roomNum'=>'TBA',
 			'employeeId'=>'111',
 			'classSize'=>'3',
-			'teachingUnits'=>0.0],
+			'teachingUnits'=>0.0]
 
 		));
 	}

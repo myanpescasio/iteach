@@ -5735,7 +5735,7 @@ button.close {
 }
 .modal-dialog {
   position: relative;
-  width: auto;
+  width: 75% auto;
   margin: 10px;
 }
 .modal-content {
@@ -5803,9 +5803,9 @@ button.close {
   height: 50px;
   overflow: scroll;
 }
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {*/
   .modal-dialog {
-    width: 600px;
+    width: 75%;
     margin: 30px auto;
   }
   .modal-content {
@@ -5815,12 +5815,12 @@ button.close {
   .modal-sm {
     width: 300px;
   }
-}
-@media (min-width: 992px) {
+/*}
+@media (min-width: 992px) {*/
   .modal-lg {
     width: 900px;
   }
-}
+/*}*/
 .tooltip {
   position: absolute;
   z-index: 1070;
